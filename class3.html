@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs binding</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style>
+    .one{
+        color:orange;
+    }
+    .two{
+        text-decoration: line-through;
+    }
+</style>
+</head>
+<body>
+    <div id="app">
+       <a v-bind:href="address"> Vuejs</a>
+       <h2 :class="classes">Easy Vue</h2>
+       <input type="text" v-bind:value="name" />
+    </div>
+    <script>
+        let app=new Vue ({
+    el:'#app',
+    data:{
+        address:'https://vuejs.org/',
+        classes:['one','two'],
+        name:'Input text'
+    },
+
+})
+    </script>
+</body>
+</html>
