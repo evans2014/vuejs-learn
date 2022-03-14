@@ -1,18 +1,25 @@
-<template>
-   <HelloWorld />
+<template> 
+  <div id="app">
+    <h2>{{title}}</h2>
+    <NavbarTop ></NavbarTop>
+    <FooterMain />
+  </div>   
 </template>
 
 <script>
 
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import HelloWorld from './components/HelloWorld';
+import FooterMain from './components/FooterMain.vue'
+import NavbarTop from './components/NavbarTop'
 export default {
   name: 'App',
+  data(){
+    return{
+      title:'Vue js APP'
+    }
+  },
   components: {
-    HelloWorld,
-    Navbar,
-    Footer
+    NavbarTop,
+    FooterMain
   }
 }
 </script>
