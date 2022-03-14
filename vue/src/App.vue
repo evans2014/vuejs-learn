@@ -3,12 +3,16 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import HelloWorld from './components/HelloWorld';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    Navbar,
+    Footer
   }
 }
 </script>
