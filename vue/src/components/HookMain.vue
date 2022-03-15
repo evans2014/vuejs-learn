@@ -1,7 +1,8 @@
 <template>
 <div class="Hook">
   <h1>Posts </h1>
-<div v-for="post in posts" :key="post.id">
+  <input type="text" v-model="searchTrem" placeholder="Search">
+<div v-for="post in filtersearch" :key="post.id">
   <h2>{{post.title}}</h2>
   <p>{{post.body}}</p>
 </div>
@@ -13,12 +14,21 @@ export default {
   name: 'HookMain',
   data() {
     return {
-      posts:[]    
+      posts:[],
+      searchTrem:''    
+    }
+  },
+  computed:{
+    filtersearch(){
+      return this.posts.filter(post=>{
+        return post.title.match(this.searchTrem)
+      })
     }
   },
   methods: {
     
-  },created() {
+  },
+  created() {
     axios.get('https://jsonplaceholder.typicode.com/posts/')
     .then(response=>{
       //console.log(response)
