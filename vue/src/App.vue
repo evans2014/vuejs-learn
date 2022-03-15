@@ -2,9 +2,8 @@
   <div id="app">
     <h2>{{title}}</h2>
     <NavbarTop ></NavbarTop>
-    <AllFriends :friends="friends" @delete="deleteFriend"></AllFriends>
-    <OnlineFriends :friends="friends"></OnlineFriends>
-    <FooterMain />
+    <HookMain></HookMain>
+    <FooterMain ></FooterMain >
   </div>   
 </template>
 
@@ -12,36 +11,23 @@
 
 import FooterMain from './components/FooterMain.vue'
 import NavbarTop from './components/NavbarTop'
-import AllFriends from './components/AllFriends'
-import OnlineFriends from './components/OnlineFriends'
+import HookMain from './components/HookMain'
+
 export default {
   name: 'App',
   data(){
     return{
       title:'Vue js APP',
-      friends:[
-            {name:'A', online:true},
-            {name:'B', online:false},
-            {name:'C', online:true},
-            {name:'D', online:true},
-            {name:'E', online:false},
-            {name:'f', online:false}
-        ] 
     }
   },
   components: {
     NavbarTop,
     FooterMain,
-    OnlineFriends,
-    AllFriends
+    HookMain
+
   },
   methods: {
-    deleteFriend(payload){
-      //console.log(payload)
-      this.friends= this.friends.filter(friend=>{
-        return friend.name !== payload.name
-      })
-    }
+    
   },
 }
 </script>
