@@ -1,2 +1,2 @@
 # VueJs Basic Fundamentals 
-Udemy LARAVEL8 + VUEJS
+Udemy Learning LARAVEL8 + VUEJS
